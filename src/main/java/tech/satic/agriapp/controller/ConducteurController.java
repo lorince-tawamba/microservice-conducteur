@@ -13,14 +13,14 @@ import tech.satic.agriapp.service.ConducteurServiceImpl;
 @RequestMapping(path = "/conducteurs")
 public class ConducteurController {
 
-    private ConducteurServiceImpl conducteurServiceImpl;
+    private ConducteurService conducteurService;
 
-    public ConducteurController(ConducteurServiceImpl conducteurServiceImpl) {
-        this.conducteurServiceImpl = conducteurServiceImpl;
+    public ConducteurController(ConducteurService conducteurService) {
+        this.conducteurService = conducteurService;
     }
 
      @PostMapping(path = "/add")
     public ConducteurResponseDTO addConducteur(@RequestBody ConducteurRequestDTO conducteurRequestDTO) {
-        return conducteurServiceImpl.addConduteur(conducteurRequestDTO);
+        return conducteurService.addConduteur(conducteurRequestDTO);
     }
 }
