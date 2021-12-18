@@ -19,5 +19,6 @@ public class ConducteurServiceImpl implements ConducteurService {
 
     public ConducteurResponseDTO addConduteur(ConducteurRequestDTO conducteurRequestDTO) {
         Conducteur conducteur = conducteurMapper.conducteurRequestDTOConducteur(conducteurRequestDTO);
+        return conducteurMapper.conducteurToConducteurResponseDTO(conducteurRepository.save(conducteur));
     }
 }
